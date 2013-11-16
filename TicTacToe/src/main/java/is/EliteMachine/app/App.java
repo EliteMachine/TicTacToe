@@ -1,9 +1,6 @@
 package is.EliteMachine.app;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     private static int[][] winComb = new int[][] {
@@ -35,12 +32,15 @@ public class App
             }
             if(counter == 3)
                 return true;
+            else
+                counter = 0;
         }
         return false;
     }
 
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
-        System.out.println( "Hello World!" );
+        App a = new App();
+        a.isWin(new int[]{1, 2, 3});
     }
 }
