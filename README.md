@@ -1,4 +1,0 @@
-TicTacToe
-=========
-
-Super awesome TicTacToe!
