@@ -3,6 +3,8 @@ package is.EliteMachine.app;
 
 public class App 
 {
+    private char playerSymbol;
+    private int turnNumber;
     private static int[][] winComb = new int[][] {
         {0, 1, 2},
         {3, 4, 5},
@@ -17,12 +19,22 @@ public class App
     // Initalize a game of TicTacToe
     public App()
     {
+        // Initialize empty grid.
+        this.playerSymbol = 'X';
+        this.turnNumber = 1;
+    }
+
+    public static void playGame(int player)
+    {
+        // Game logic.
     }
 
     public static boolean isWin(int arr[])
     {
         int counter = 0;
         // Loop through winComb, check if arr matches any of the arrays in there.
+        // If all array indices match, counter will be increased to 3, and the function returns true.
+        // Otherwise, reset counter after each array check.
         for(int i = 0; i < 8; i++)
         {
             for(int j = 0; j < 3; j++)
@@ -41,6 +53,20 @@ public class App
     public static void main(String[] args)
     {
         App a = new App();
-        a.isWin(new int[]{1, 2, 3});
+        while(true)
+        {
+            // Play the game!
+            playGame(1);
+            // Check for winning combinations.
+            // Get all rows from the board and check for winning combinations.
+            a.playerSymbol = 'O';
+
+            playGame(2);
+            // Check for winning combinations.
+            // Get all rows from the board and check for winning combinations.
+            a.playerSymbol = 'X';
+
+            a.turnNumber++;
+        }
     }
 }
