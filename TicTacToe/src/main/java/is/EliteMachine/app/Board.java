@@ -19,6 +19,14 @@ public class Board {
 		{' ', ' ', ' '}
 	   };
 	}
+	// Get the board.
+	public char[][] getArray(){
+		return board_array;
+	}
+
+	public void player_mark(char player_symbol, int x, int y){
+		board_array[x][y] = player_symbol;
+	}
 	// Print the board.
 	public static void print_board(char[][] board_array){
 		for (int i = 0; i < board_array.length; i++) {
