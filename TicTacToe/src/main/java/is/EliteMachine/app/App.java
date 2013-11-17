@@ -25,7 +25,7 @@ public class App
     public App()
     {
         // Initialize empty grid.
-	//Board b = new Board();
+    	//Board b = new Board();
         this.playerSymbol = 'X';
         this.turnNumber = 1;
     }
@@ -56,34 +56,31 @@ public class App
         return false;
     }
 
-    public static boolean isDraw(char[][] board_array){
-	for(int i = 0; i < 3; i++){
-	    for(int k = 0; k < 3; k++){
-		if(board_array[i][k] == ' '){
-			return false;
-		}
-	    }
-	}
-	return true;
-    }
-
     public static void main(String[] args)
     {
         App a = new App();
         while(true)
         {
+            System.out.print(a.playerSymbol + " > ");
             // Play the game!
             playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
             a.playerSymbol = 'O';
-
+            
+            System.out.print(a.playerSymbol + " > ");
             playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
             a.playerSymbol = 'X';
 
             a.turnNumber++;
+            if(a.turnNumber == 9)
+            {
+                System.out.println("The match resulted in a draw. Good game!");
+                break;
+            }
+            System.out.print(a.turnNumber + "!\n");
         }
     }
 }
