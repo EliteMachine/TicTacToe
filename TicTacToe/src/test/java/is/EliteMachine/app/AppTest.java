@@ -1,38 +1,15 @@
 package is.EliteMachine.app;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import junit.framework.Assert;
+import java.util.ArrayList;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
+   public void testGrid()
     {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+	App a = new App();
+	ArrayList<Character> p = new ArrayList<Character>();
+	p = a.printGrid();
+	Assert.assertEquals("         ", p);
     }
 }
