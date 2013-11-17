@@ -15,10 +15,17 @@ public class App
         {2, 4, 6}
     };
 
+    private static char[][] board_array = new char[][]{
+	{' ', ' ', ' '},
+	{' ', ' ', ' '}, 
+	{' ', ' ', ' '}
+    };
+
     // Initalize a game of TicTacToe
     public App()
     {
         // Initialize empty grid.
+	//Board b = new Board();
         this.playerSymbol = 'X';
         this.turnNumber = 1;
     }
@@ -47,6 +54,17 @@ public class App
                 counter = 0;
         }
         return false;
+    }
+
+    public static boolean isDraw(char[][] board_array){
+	for(int i = 0; i < 3; i++){
+	    for(int k = 0; k < 3; k++){
+		if(board_array[i][k] == ' '){
+			return false;
+		}
+	    }
+	}
+	return true;
     }
 
     public static void main(String[] args)
