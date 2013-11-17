@@ -1,9 +1,9 @@
 package is.EliteMachine.app;
-
 public class App 
 {
     private char playerSymbol;
     private int turnNumber;
+    private static Board b;
     private static int[][] winComb = new int[][] {
         {0, 1, 2},
         {3, 4, 5},
@@ -25,7 +25,8 @@ public class App
     public App()
     {
         // Initialize empty grid.
-	//Board b = new Board();
+
+	    this.b = new Board();
         this.playerSymbol = 'X';
         this.turnNumber = 1;
     }
@@ -70,6 +71,8 @@ public class App
     public static void main(String[] args)
     {
         App a = new App();
+	b.print_board(b.getArray());
+	//b.player_mark('X', 1, 1);
         while(true)
         {
             // Play the game!
