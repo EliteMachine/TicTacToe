@@ -15,15 +15,22 @@ public class App
         {2, 4, 6}
     };
 
+    private static char[][] board_array = new char[][]{
+	{' ', ' ', ' '},
+	{' ', ' ', ' '}, 
+	{' ', ' ', ' '}
+    };
+
     // Initalize a game of TicTacToe
     public App()
     {
         // Initialize empty grid.
+	//Board b = new Board();
         this.playerSymbol = 'X';
         this.turnNumber = 1;
     }
 
-    public static void playGame(int player)
+    public static void playGame()
     {
         // Game logic.
     }
@@ -49,18 +56,29 @@ public class App
         return false;
     }
 
+    public static boolean isDraw(char[][] board_array){
+	for(int i = 0; i < 3; i++){
+	    for(int k = 0; k < 3; k++){
+		if(board_array[i][k] == ' '){
+			return false;
+		}
+	    }
+	}
+	return true;
+    }
+
     public static void main(String[] args)
     {
         App a = new App();
         while(true)
         {
             // Play the game!
-            playGame(1);
+            playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
             a.playerSymbol = 'O';
 
-            playGame(2);
+            playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
             a.playerSymbol = 'X';
