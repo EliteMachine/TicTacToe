@@ -1,11 +1,11 @@
 #TicTacToe
 
-Super awesome TicTacToe!
+Awesome TicTacToe!
 
-## About this project.
+##About this project
 
 Fluff text.
 
-## How to play
+##How to play
 
 Fluff instructions.
