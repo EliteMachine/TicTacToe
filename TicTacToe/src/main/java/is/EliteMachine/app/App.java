@@ -70,6 +70,13 @@ public class App
             // Get all rows from the board and check for winning combinations.
             a.playerSymbol = 'O';
             
+            a.turnNumber++;
+            if(a.turnNumber > 9)
+            {
+                System.out.println("The match resulted in a draw. Good game!");
+                break;
+            }
+
             System.out.print(a.playerSymbol + " > ");
             playGame();
             // Check for winning combinations.
@@ -77,7 +84,7 @@ public class App
             a.playerSymbol = 'X';
 
             a.turnNumber++;
-            if(a.turnNumber == 9)
+            if(a.turnNumber > 9)
             {
                 System.out.println("The match resulted in a draw. Good game!");
                 break;
