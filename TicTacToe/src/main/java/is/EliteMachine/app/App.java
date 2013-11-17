@@ -30,7 +30,7 @@ public class App
         this.turnNumber = 1;
     }
 
-    public static void playGame(int player)
+    public static void playGame()
     {
         // Game logic.
     }
@@ -73,12 +73,12 @@ public class App
         while(true)
         {
             // Play the game!
-            playGame(1);
+            playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
             a.playerSymbol = 'O';
 
-            playGame(2);
+            playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
             a.playerSymbol = 'X';
