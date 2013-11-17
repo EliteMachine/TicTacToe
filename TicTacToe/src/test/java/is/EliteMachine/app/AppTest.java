@@ -24,10 +24,4 @@ public class AppTest
         assertEquals(false, app.isWin(new int[]{8, 1, 3}));
         assertEquals(false, app.isWin(new int[]{7, 2, 5}));
     }
-    /*
-    @Test
-    public void someTest(){
-        App app = new App();
-    }
-    */
 }

@@ -1,6 +1,5 @@
 package is.EliteMachine.app;
 
-
 public class App 
 {
     private char playerSymbol;
