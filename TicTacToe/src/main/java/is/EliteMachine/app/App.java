@@ -17,7 +17,7 @@ public class App
 
     private static char[][] board_array = new char[][]{
 	{' ', ' ', ' '},
-	{' ', ' ', ' '}, 
+	{' ', ' ', ' '},
 	{' ', ' ', ' '}
     };
 
