@@ -1,5 +1,5 @@
-[![Build Status](https://travisci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME].png)]
-(https://travisci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME])
+[![Build Status](https://travisci.org/[atax1c]/[TicTacToe].png)]
+(https://travisci.org/[atax1c]/[TicTacToe])
 
 #TicTacToe
 
