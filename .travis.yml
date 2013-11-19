@@ -1,2 +1,9 @@
 language: java
 jdk: openjdk7
+deploy:
+  provider: heroku
+  api_key:
+    secure: KbJHIUMy8tIaxQBIlz5lbyJ+JDMTFQN7/8nOcxAcsRIQgwnYtfZ4jomRFRCtJV2266eytnXZEtywrYhgsVk69CRX5hoN3LMzUz5Dqgx5a7m0UHaUZlhBJHrNsu2b3YSlKvds59EiYqIj4BI0KYBfKZwGJGWc0/hP8bx8of4zfy8=
+  app: afternoon-wave-7942
+  on:
+    repo: EliteMachine/TicTacToe
