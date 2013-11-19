@@ -1,0 +1,32 @@
+package is.EliteMachine.app;
+import java.util.ArrayList;
+public class App 
+{
+    static int COL_NR = 3;
+    static int ROW_NR = 3;
+    static char[][] grid = new char[COL_NR][ROW_NR];
+
+    public static String grid(){
+	StringBuilder sb = new StringBuilder();
+	ArrayList<String> gameGrid = new ArrayList<String>();
+	for(int i = 0; i < 3; i++){
+	    for(int k = 0; k < 3; k++){
+		grid[i][k] = ' ';
+	    }
+	} 
+	gameGrid.add(grid[0][0]+grid[0][1]/*+grid[0][2]+"\n"*/);
+	/*gameGrid.add(grid[1][0]+grid[1][1]+grid[1][2]+"\n");
+	gameGrid.add(grid[2][0]+grid[2][1]+grid[2][2]);*/
+	for(String str : gameGrid){
+	    sb.append(str);
+	}
+	String alToStr = sb.toString();
+	alToStr.replaceAll("\\s", "");
+	return alToStr; 
+    }
+
+    public static void main( String[] args )
+    {
+        new App();
+    }
+}
