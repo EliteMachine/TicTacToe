@@ -1,6 +1,4 @@
-[![Build Status](https://travisci.org/[atax1c]/[TicTacToe].png)]
-(https://travisci.org/[atax1c]/[TicTacToe])
-
+[![Build Status](https://travis-ci.org/EliteMachine/TicTacToe.png?branch=master)](https://travis-ci.org/EliteMachine/TicTacToe)
 #TicTacToe
 
 Awesome TicTacToe!
