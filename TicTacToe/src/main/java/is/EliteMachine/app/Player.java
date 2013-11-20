@@ -17,4 +17,16 @@ public class Player {
 			playerSymbol = 'O';
 		}
 	}
+
+	public static int getPlayerTurn(){
+		return playerTurn;
+	}
+
+	public static char getplayerSymbol(){
+		return playerSymbol;
+	}
+
+	public static void incrementTurn(){
+		playerTurn += 1;
+	}
 }
