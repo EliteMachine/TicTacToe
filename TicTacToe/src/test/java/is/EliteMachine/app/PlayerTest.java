@@ -19,4 +19,22 @@ public class PlayerTest
 		player.XOPlayers(1, playerSymbol);
 		assertThat(player, is('O'));
 	}
+
+	@Test
+	public void playerTurnTest(){
+		player.getPlayerTurn();
+		assertThat(player, is(not(null)));
+	}
+
+	@Test
+	public void playerSymbolTest(){
+		player.getPlayerSymbol();
+		assertThat(player, is(not(null)));
+	}
+
+	@Test
+	public void incrementTurn(){
+		player.incrementTurn();
+		assertThat(player, is(1));
+	}
 }
