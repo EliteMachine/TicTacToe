@@ -1,9 +1,12 @@
 package is.EliteMachine.app;
+import is.EliteMachine.app.Player;
 public class App 
 {
     private char playerSymbol;
     private int turnNumber;
     private static Board b;
+    private static Player p;
+
     private static int[][] winComb = new int[][] {
         {0, 1, 2},
         {3, 4, 5},
@@ -20,8 +23,9 @@ public class App
     {
         // Initialize empty grid.
     	this.b = new Board();
-        this.playerSymbol = 'X';
-        this.turnNumber = 1;
+	this.p = new Player();
+       // this.playerSymbol = 'X';
+        //this.turnNumber = 1;
     }
 
     public static void playGame()
@@ -55,35 +59,36 @@ public class App
         App a = new App();
     	b.print_board(b.getArray());
 	    //b.player_mark('X', 1, 1);
+
         while(true)
         {
-            System.out.print(a.playerSymbol + " > ");
+            System.out.print(p.getPlayerSymbol() + " > ");
             // Play the game!
             playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
-            a.playerSymbol = 'O';
+            p.XOPlayers(p.getPlayerTurn(), p.getPlayerSymbol());
             
-            a.turnNumber++;
-            if(a.turnNumber > 9)
+            p.incrementTurn();
+            if(p.getPlayerTurn > 9)
             {
                 System.out.println("The match resulted in a draw. Good game!");
                 break;
             }
 
-            System.out.print(a.playerSymbol + " > ");
+            System.out.print(p.getPlayerSymbol() + " > ");
             playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
-            a.playerSymbol = 'X';
+            p.XOPlayers(p.getPlayerTurn(), p.getPlayerSymbol());
 
-            a.turnNumber++;
-            if(a.turnNumber > 9)
+            p.setPlayerTurn();
+            if(p.getPlayerTurn() > 9)
             {
                 System.out.println("The match resulted in a draw. Good game!");
                 break;
             }
-            System.out.print(a.turnNumber + "!\n");
+            System.out.print(p.getPlayerTurn() + "!\n");
         }
     }
 }
