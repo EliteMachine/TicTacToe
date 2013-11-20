@@ -15,12 +15,6 @@ public class App
         {2, 4, 6}
     };
 
-    private static char[][] board_array = new char[][]{
-	{' ', ' ', ' '},
-	{' ', ' ', ' '},
-	{' ', ' ', ' '}
-    };
-
     // Initalize a game of TicTacToe
     public App()
     {
