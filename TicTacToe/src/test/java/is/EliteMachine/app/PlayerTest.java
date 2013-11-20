@@ -7,14 +7,16 @@ import org.junit.Test;
 
 public class PlayerTest
 {
+	Player player = new Player();
 	@Test
 	public void isPlayerOneX(){
-		Player player = new Player();
-		
-		
+		player.XOPlayers(2, playerSymbol);
+		assertThat(player, is('X'));
 	}
-
-
-
-
+	
+	@Test
+	public void isPlayerTwoO(){
+		player.XOPlayers(1, playerSymbol);
+		assertThat(player, is('O'));
+	}
 }
