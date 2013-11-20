@@ -1,4 +1,4 @@
-package is.EliteMachine.app
+package is.EliteMachine.app;
 //This is a test class for the Player class in main
 
 import static org.junit.Assert.assertEquals;
