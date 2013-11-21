@@ -1,0 +1,15 @@
+package is.EliteMachine.app;
+
+import junit.framework.Assert;
+
+
+public class AppTest
+{
+   public void testGrid()
+    {
+	App a = new App();
+	String result = a.grid();
+	Assert.assertEquals("   \n
+", result);
+    }
+}
