@@ -22,7 +22,7 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <outputDirectory>TicTacToe-exec</outputDirectory>
+                    <outputDirectory>${user.home}/${project.artifactId}/TicTacToe-exec</outputDirectory>
                     <archive>
                         <manifest>
                             <mainClass>is.EliteMachine.app.App</mainClass>
