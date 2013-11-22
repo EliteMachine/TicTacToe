@@ -9,7 +9,7 @@ public class Player {
               playerSymbol = ' ';
       }
 
-      public void XOPlayers(int playerTurn, char playerSymbol){
+      public void XOPlayers(int playerTurn){
               if(playerTurn % 2 == 0){
                       playerSymbol = 'X';
               }
