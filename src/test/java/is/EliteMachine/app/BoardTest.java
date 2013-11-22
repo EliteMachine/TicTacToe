@@ -22,10 +22,10 @@ public class BoardTest{
     @Test
     public void checkFieldTest() {
         a.playerMark('X', 1, 1);
-        assertEquals(true, isSet(1, 1));
-        assertEquals(false, isSet(0, 0));
-        assertEquals(false, isSet(2, 2));
+        assertEquals(true, a.isSet(1, 1));
+        assertEquals(false, a.isSet(0, 0));
+        assertEquals(false, a.isSet(2, 2));
         a.playerMark('X', 0, 2);
-        assertEquals(true, isSet(0, 2));
+        assertEquals(true, a.isSet(0, 2));
     }
 }
