@@ -4,16 +4,16 @@ package is.EliteMachine.app;
 * <h1> A simple grid for Tic Tac Toe.</h1>
 *
 * Output example:
-* [][][]
-* [][][]
-* [][][]
+* [ ][ ][X]
+* [ ][O][X]
+* [ ][ ][O]
 */
 
 public class Board {
-	private static char [][] board_array;
+	private static char [][] boardArray;
 
 	public Board(){
-		board_array = new char[][]{
+		boardArray = new char[][]{
 		{' ', ' ', ' '},
 		{' ', ' ', ' '},
 		{' ', ' ', ' '}
@@ -21,12 +21,18 @@ public class Board {
 	}
 	// Get the board.
 	public char[][] getArray(){
-		return board_array;
+		return boardArray;
 	}
 
-	public void player_mark(char player_symbol, int x, int y){
-		board_array[x][y] = player_symbol;
+	public void playerMark(char playerSymbol, int x, int y){
+        if(!isSet(x, y))
+    		boardArray[x][y] = playerSymbol;
 	}
+    
+    public boolean isSet(int x, int y) {
+        return boardArray[x][y] != ' ';
+    }
+
 	// Print the board.
 	public void print_board(char[][] board_array){
 		for (int i = 0; i < board_array.length; i++) {
