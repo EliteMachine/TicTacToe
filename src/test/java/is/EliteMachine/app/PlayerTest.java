@@ -1,40 +1,28 @@
 package is.EliteMachine.app;
 //This is a test class for the Player class in main
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 public class PlayerTest
-{/*
-	Player player = new Player();
+{
+	Player p = new Player();
 	@Test
 	public void isPlayerOneX(){
-		player.XOPlayers(2, playerSymbol);
-		assertThat(player, is('X'));
+		p.XOPlayers(2);
+		assertEquals('X', p.getPlayerSymbol());
 	}
-	
+
 	@Test
 	public void isPlayerTwoO(){
-		player.XOPlayers(1, playerSymbol);
-		assertThat(player, is('O'));
+		p.XOPlayers(1);
+		assertEquals('O', p.getPlayerSymbol());
 	}
 
 	@Test
-	public void playerTurnTest(){
-		player.getPlayerTurn();
-		assertThat(player, is(not(null)));
+	public void incrementTurn_test(){
+		p.incrementTurn();
+		assertEquals("Should return 1", 1, p.getPlayerTurn());
 	}
-
-	@Test
-	public void playerSymbolTest(){
-		player.getPlayerSymbol();
-		assertThat(player, is(not(null)));
-	}
-
-	@Test
-	public void incrementTurn(){
-		player.incrementTurn();
-		assertThat(player, is(1));
-	}*/
 }

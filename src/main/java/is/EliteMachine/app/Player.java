@@ -21,7 +21,7 @@ public class Player {
       public int getPlayerTurn(){
               return playerTurn;
       }
-      
+
       public void setPlayerSymbol(char player_Symbol){
     	  playerSymbol = player_Symbol;
       }
