@@ -1,2 +1,5 @@
 target
 TicTacToe-exec
+*.swp
+*.save
+*.orig
