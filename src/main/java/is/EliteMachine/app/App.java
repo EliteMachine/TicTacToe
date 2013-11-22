@@ -67,7 +67,7 @@ public class App
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
             p.incrementTurn();
-            p.XOPlayers(p.getPlayerTurn(), p.getPlayerSymbol());
+            p.XOPlayers(p.getPlayerTurn());
             
             
             if(p.getPlayerTurn() > 9)
@@ -80,7 +80,7 @@ public class App
             playGame();
             // Check for winning combinations.
             // Get all rows from the board and check for winning combinations.
-            p.XOPlayers(p.getPlayerTurn(), p.getPlayerSymbol());
+            p.XOPlayers(p.getPlayerTurn());
 
             //p.setPlayerTurn();
             if(p.getPlayerTurn() > 9)
