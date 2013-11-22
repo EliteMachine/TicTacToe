@@ -1,1 +1,6 @@
-Dev Mantesting furthertesting
+We used Github for source control.
+On fresh machines you have to get developer environment like linux or putty to
+connect integration server like Greenqloud.
+Also you have to have access to Travis to build the project.
+Maven is also needed and we use it for testing.
+We use Travis for build enviroment.
