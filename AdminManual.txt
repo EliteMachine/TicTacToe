@@ -1,7 +1,0 @@
-Admin Manual
-
-First you have to install program like putty to connect to the server and
-also get a username, password. Then get account on Github to get access to
-the program.
-When you are installed to putty and have access to the program you have
-to install Maven and Travis to test and build the program.
