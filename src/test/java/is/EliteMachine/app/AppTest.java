@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class AppTest 
 {
+    /*
     @Test
     public void isWinTest(){
         App app = new App();
@@ -24,4 +25,5 @@ public class AppTest
         assertEquals(false, app.isWin(new int[]{8, 1, 3}));
         assertEquals(false, app.isWin(new int[]{7, 2, 5}));
     }
+    */
 }
