@@ -6,24 +6,28 @@ import org.junit.Test;
 
 public class AppTest 
 {
-    /*
     @Test
     public void isWinTest(){
-        App app = new App();
+        App a = new App();
 
-        assertEquals(true, app.isWin(new int[]{0, 1, 2}));
-        assertEquals(true, app.isWin(new int[]{3, 4, 5}));
-        assertEquals(true, app.isWin(new int[]{6, 7, 8}));
-        assertEquals(true, app.isWin(new int[]{0, 3, 6}));
-        assertEquals(true, app.isWin(new int[]{1, 4, 7}));
-        assertEquals(true, app.isWin(new int[]{2, 5, 8}));
-        assertEquals(true, app.isWin(new int[]{0, 4, 8}));
-        assertEquals(true, app.isWin(new int[]{2, 4, 6}));
-        assertEquals(false, app.isWin(new int[]{1, 5, 3}));
-        assertEquals(false, app.isWin(new int[]{7, 2, 3}));
-        assertEquals(false, app.isWin(new int[]{7, 2, 6}));
-        assertEquals(false, app.isWin(new int[]{8, 1, 3}));
-        assertEquals(false, app.isWin(new int[]{7, 2, 5}));
+        assertEquals(false, a.isWin());
+        a.b.playerMark('X', 0, 0);
+        a.b.playerMark('X', 0, 1);
+        a.b.playerMark('X', 0, 2);
+        assertEquals(true, a.isWin());
+
+        a.b = new Board();
+        assertEquals(false, a.isWin());
+        a.b.playerMark('X', 1, 0);
+        a.b.playerMark('X', 1, 1);
+        a.b.playerMark('X', 1, 2);
+        assertEquals(true, a.isWin());
+
+        a.b = new Board();
+        assertEquals(false, a.isWin());
+        a.b.playerMark('X', 0, 0);
+        a.b.playerMark('X', 1, 0);
+        a.b.playerMark('X', 2, 0);
+        assertEquals(true, a.isWin());
     }
-    */
 }
