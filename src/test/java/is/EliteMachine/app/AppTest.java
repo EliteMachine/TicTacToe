@@ -29,5 +29,11 @@ public class AppTest
         a.b.playerMark('X', 1, 0);
         a.b.playerMark('X', 2, 0);
         assertEquals(true, a.isWin());
+
+        a.b = new Board();
+        a.b.playerMark('X', 0, 0);
+        a.b.playerMark('X', 1, 1);
+        a.b.playerMark('X', 2, 2);
+        assertEquals(true, a.isWin());
     }
 }

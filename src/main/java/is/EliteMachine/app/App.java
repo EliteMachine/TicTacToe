@@ -32,7 +32,7 @@ public class App
     {
         int[] xy = new int[2];
 
-        System.out.print("Please input what row and column you want to place your mark (between 1 and 3): ");
+        System.out.print("Please input what row and column you want to place your mark (between 1 and 3, fx. 2 3 for row 2 and column 3): ");
         
         do {
             xy = getInput();
