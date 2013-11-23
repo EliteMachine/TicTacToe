@@ -41,4 +41,13 @@ public class BoardTest{
         boardArr[1][2] = 'X';
         assertThat(boardArr, not(equalTo(a.getBoard())));
     }
+
+    @Test
+    public void boardPrintTest() {
+        a = new Board();
+        a.printBoard();
+        System.out.println();
+        a.playerMark('X', 1, 1);
+        a.printBoard();
+    }
 }

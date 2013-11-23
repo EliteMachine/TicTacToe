@@ -12,29 +12,28 @@ package is.EliteMachine.app;
 public class Board {
 	private static char [][] boardArray;
 
-	public Board(){
-		boardArray = new char[][]{
+	public Board() {
+		boardArray = new char[][] {
 		{' ', ' ', ' '},
 		{' ', ' ', ' '},
 		{' ', ' ', ' '}
 	   };
 	}
 	// Get the board.
-	public char[][] getBoard(){
+	public static char[][] getBoard() {
 		return boardArray;
 	}
 
-	public void playerMark(char playerSymbol, int x, int y){
-        if(!isSet(x, y))
-    		boardArray[x][y] = playerSymbol;
+	public static void playerMark(char playerSymbol, int x, int y) {
+  		boardArray[x][y] = playerSymbol;
 	}
     
-    public boolean isSet(int x, int y) {
+    public static boolean isSet(int x, int y) {
         return boardArray[x][y] != ' ';
     }
 
 	// Print the board.
-	public void printBoard(){
+	public static void printBoard() {
 		for (int i = 0; i < boardArray.length; i++) {
 			for (int j = 0; j < boardArray.length; j++) {
 				System.out.print("[" + boardArray[i][j] + "]");

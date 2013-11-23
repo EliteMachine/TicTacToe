@@ -1,8 +1,11 @@
 package is.EliteMachine.app;
+
+import java.util.Scanner;
+
 public class App 
 {
     private static Board b;
-    private static Player p;
+    private static int gameTurn;
 
     private static int[][] winComb = new int[][] {
         {0, 1, 2},
@@ -19,76 +22,63 @@ public class App
     public App()
     {
         // Initialize empty grid.
-        b = new Board();
-        p = new Player();
-        //this.playerSymbol = 'X';
-        //this.turnNumber = 1;
+        this.b = new Board();
+        //this.p = new Player();
+
+        this.gameTurn = 1;
     }
 
     public static void playGame()
     {
-        // Game logic.
-    	
+        int[] xy = new int[2];
+
+        System.out.print("Please input what row and column you want to place your mark (between 1 and 3): ");
+        
+        do {
+            xy = getInput();
+            if(!b.isSet(xy[0] - 1, xy[1] - 1)) {
+                if(gameTurn % 2 == 1){
+                    b.playerMark('X', xy[0] - 1, xy[1] - 1);
+                    return;
+                }
+                else if(gameTurn % 2 == 0) {
+                    b.playerMark('O', xy[0] - 1, xy[1] - 1);
+                    return;
+                }
+            }
+            else
+                System.out.println("Field already marked, pick another one.");
+        }while(true);
     }
 
-    public static boolean isWin(int arr[])
+    public static int[] getInput() {
+        int[] inp = new int[2];
+
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            inp[0] = sc.nextInt();
+            inp[1] = sc.nextInt();
+        } while((inp[0] < 1 || inp[0] > 3) && (inp[1] < 1 || inp[1] > 3));
+
+        return inp;
+    }
+
+    public static boolean isWin()
     {
-        int counter = 0;
-        // Loop through winComb, check if arr matches any of the arrays in there.
-        // If all array indices match, counter will be increased to 3, and the function returns true.
-        // Otherwise, reset counter after each array check.
-        for(int i = 0; i < 8; i++)
-        {
-            for(int j = 0; j < 3; j++)
-            {
-                if(winComb[i][j] == arr[j])
-                    counter++;
-            }
-            if(counter == 3)
-                return true;
-            else
-                counter = 0;
-        }
         return false;
     }
 
     public static void main(String[] args)
     {
         App a = new App();
-        //b.print_board(b.getArray());
-    	//b.player_mark('X', 1, 1);
-        //p.setPlayerSymbol('X');
 
         while(true)
         {
-            System.out.print(p.getPlayerSymbol() + " > ");
-            // Play the game!
             playGame();
-            // Check for winning combinations.
-            // Get all rows from the board and check for winning combinations.
-            p.incrementTurn();
-            p.XOPlayers(p.getPlayerTurn());
-            
-            
-            if(p.getPlayerTurn() > 9)
-            {
-                System.out.println("The match resulted in a draw. Good game!");
-                break;
-            }
-            
-            System.out.print(p.getPlayerSymbol() + " > ");
-            playGame();
-            // Check for winning combinations.
-            // Get all rows from the board and check for winning combinations.
-            p.XOPlayers(p.getPlayerTurn());
-
-            //p.setPlayerTurn();
-            if(p.getPlayerTurn() > 9)
-            {
-                System.out.println("The match resulted in a draw. Good game!");
-                break;
-            }
-            System.out.print("Player turn: " + p.getPlayerTurn() + "!\n");
+            b.printBoard();
+            gameTurn++;
+            System.out.println();
         }
     }
 }
