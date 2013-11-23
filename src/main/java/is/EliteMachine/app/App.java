@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class App 
 {
-    private static Board b;
+    public static Board b;
     private static int gameTurn;
 
     private static int[][] winComb = new int[][] {
@@ -41,7 +41,7 @@ public class App
                     b.playerMark('X', xy[0] - 1, xy[1] - 1);
                     return;
                 }
-                else if(gameTurn % 2 == 0) {
+                else {
                     b.playerMark('O', xy[0] - 1, xy[1] - 1);
                     return;
                 }
@@ -66,17 +66,54 @@ public class App
 
     public static boolean isWin()
     {
+        int counter = 0;
+        char[][] tmpBoard = new char[3][3];
+        char[] board = new char[9];
+        tmpBoard = b.getBoard();
+
+        // Flatten out the 2d array so it will be easier to compare it to winComb.
+        for(int i = 0; i < tmpBoard.length; i++) {
+            for(int j = 0; j < tmpBoard.length; j++) {
+                board[counter] = tmpBoard[i][j];
+                counter++;
+            }
+        }
+        
+        // Check if there are any winning combinations on the board, return true if so.
+        for(int i = 0; i < winComb.length; i++) {
+            if((board[winComb[i][0]] != ' ') && (board[winComb[i][0]] == board[winComb[i][1]]) && (board[winComb[i][0]] == board[winComb[i][2]]))
+                return true;
+        }
         return false;
     }
 
     public static void main(String[] args)
     {
         App a = new App();
+        
+        // Print out initial game board.
+        b.printBoard();
+        System.out.println();
 
         while(true)
         {
+            if(gameTurn >= 10) {
+                System.out.println("The match ended in a draw.");
+                break;
+            }
+
             playGame();
             b.printBoard();
+            if(isWin()) {
+                if(gameTurn % 2 == 1) {
+                    System.out.println("X wins!");
+                    break;
+                }
+                else {
+                    System.out.println("O wins!");
+                    break;
+                }
+            }
             gameTurn++;
             System.out.println();
         }
