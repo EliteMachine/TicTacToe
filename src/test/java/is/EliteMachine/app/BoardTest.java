@@ -10,17 +10,22 @@ public class BoardTest{
 
     Board a = new Board();
 	Board b = new Board();
-	Board c = new Board();
+    private static char[][] boardArr = new char[][] {
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
+        {' ', ' ', ' '}
+    };
 
 	@Test
-	public void playerMarkTest(){
-		b.playerMark('X', 1, 1);
-		c.playerMark('X', 1, 0);
-		assertThat(b, is(not(c)));
+	public void playerMarkTest() {
+		a.playerMark('X', 1, 1);
+		b.playerMark('X', 1, 0);
+		assertThat(a, is(not(b)));
 	}
 
     @Test
     public void checkFieldTest() {
+        a = new Board();
         a.playerMark('X', 1, 1);
         assertEquals(true, a.isSet(1, 1));
         assertEquals(false, a.isSet(0, 0));
@@ -28,4 +33,17 @@ public class BoardTest{
         a.playerMark('X', 0, 2);
         assertEquals(true, a.isSet(0, 2));
     }
+    
+    @Test
+    public void getBoardTest() {
+        a = new Board();
+        assertEquals(boardArr, a.getBoard());
+        boardArr[1][2] = 'X';
+        assertThat(boardArr, not(equalTo(a.getBoard())));
+    }
+    /*
+    @Test
+    public void printBoardTest() {
+        // test if the output is correct.
+    } */
 }

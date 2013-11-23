@@ -20,7 +20,7 @@ public class Board {
 	   };
 	}
 	// Get the board.
-	public char[][] getArray(){
+	public char[][] getBoard(){
 		return boardArray;
 	}
 
