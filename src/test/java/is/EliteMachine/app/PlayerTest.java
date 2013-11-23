@@ -7,22 +7,24 @@ import org.junit.Test;
 
 public class PlayerTest
 {
-	Player p = new Player();
+	Player p1 = new Player('X');
+    player p2 = new Player('O');
+
 	@Test
-	public void isPlayerOneX(){
-		p.XOPlayers(2);
-		assertEquals('X', p.getPlayerSymbol());
+	public void isPlayerOneX() {
+		assertEquals('X', p1.getPlayerSymbol());
+        assertThat('O', is(not(p1.getPlayerSymbol())));
 	}
 
 	@Test
-	public void isPlayerTwoO(){
-		p.XOPlayers(1);
-		assertEquals('O', p.getPlayerSymbol());
+	public void isPlayerTwoO() {
+		assertEquals('O', p2.getPlayerSymbol());
+        assertThat('X', is(not(p2.getPlayerSymbol())));
 	}
-
+    /*
 	@Test
 	public void incrementTurn_test(){
 		p.incrementTurn();
 		assertEquals("Should return 1", 1, p.getPlayerTurn());
-	}
+	}*/
 }

@@ -41,9 +41,4 @@ public class BoardTest{
         boardArr[1][2] = 'X';
         assertThat(boardArr, not(equalTo(a.getBoard())));
     }
-    /*
-    @Test
-    public void printBoardTest() {
-        // test if the output is correct.
-    } */
 }

@@ -34,10 +34,10 @@ public class Board {
     }
 
 	// Print the board.
-	public void print_board(char[][] board_array){
-		for (int i = 0; i < board_array.length; i++) {
-			for (int j = 0; j < board_array.length; j++) {
-				System.out.print("[" + board_array[i][j] + "]");
+	public void printBoard(){
+		for (int i = 0; i < boardArray.length; i++) {
+			for (int j = 0; j < boardArray.length; j++) {
+				System.out.print("[" + boardArray[i][j] + "]");
 			}
 			System.out.println();
 		}
