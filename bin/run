@@ -1,2 +1,5 @@
 #!/bin/bash
-java -jar target/app-1.0-SNAPSHOT.jar
+
+#java -jar ../app/TicTacToe-exec/app-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+mvn exec:java
