@@ -1,4 +1,3 @@
 #!/bin/bash
 
-rm -r ../app
 mvn clean package

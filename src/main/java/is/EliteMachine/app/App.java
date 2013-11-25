@@ -23,7 +23,6 @@ public class App
     {
         // Initialize empty grid.
         this.b = new Board();
-        //this.p = new Player();
 
         this.gameTurn = 1;
     }
@@ -38,11 +37,11 @@ public class App
             xy = getInput();
             if(!b.isSet(xy[0] - 1, xy[1] - 1)) {
                 if(gameTurn % 2 == 1){
-                    b.playerMark('X', xy[0] - 1, xy[1] - 1);
+                    b.playerMark('Z', xy[0] - 1, xy[1] - 1);
                     return;
                 }
                 else {
-                    b.playerMark('O', xy[0] - 1, xy[1] - 1);
+                    b.playerMark('W', xy[0] - 1, xy[1] - 1);
                     return;
                 }
             }
@@ -106,11 +105,11 @@ public class App
             b.printBoard();
             if(isWin()) {
                 if(gameTurn % 2 == 1) {
-                    System.out.println("X wins!");
+                    System.out.println("Z wins!");
                     break;
                 }
                 else {
-                    System.out.println("O wins!");
+                    System.out.println("W wins!");
                     break;
                 }
             }
