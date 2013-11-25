@@ -37,11 +37,11 @@ public class App
             xy = getInput();
             if(!b.isSet(xy[0] - 1, xy[1] - 1)) {
                 if(gameTurn % 2 == 1){
-                    b.playerMark('Z', xy[0] - 1, xy[1] - 1);
+                    b.playerMark('X', xy[0] - 1, xy[1] - 1);
                     return;
                 }
                 else {
-                    b.playerMark('W', xy[0] - 1, xy[1] - 1);
+                    b.playerMark('O', xy[0] - 1, xy[1] - 1);
                     return;
                 }
             }
@@ -105,11 +105,11 @@ public class App
             b.printBoard();
             if(isWin()) {
                 if(gameTurn % 2 == 1) {
-                    System.out.println("Z wins!");
+                    System.out.println("X wins!");
                     break;
                 }
                 else {
-                    System.out.println("W wins!");
+                    System.out.println("O wins!");
                     break;
                 }
             }
